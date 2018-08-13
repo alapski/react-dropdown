@@ -10,7 +10,7 @@ declare module "react-dropdown" {
     name: string;
     items: Option[];
   }
-  interface ReactDropdownProps {
+  export interface ReactDropdownProps {
     options: (Group | Option | string)[];
     baseClassName?: string;
     className?: string;
@@ -18,11 +18,13 @@ declare module "react-dropdown" {
     placeholderClassName?: string;
     menuClassName?: string;
     arrowClassName?: string;
+    arrowClosed?: JSX.Element;
+    arrowOpen?: JSX.Element;
     disabled?: boolean;
-    onChange?: (arg: Option) => void;
-    onFocus?: (arg: boolean) => void;
-    value?: Option;
-    placeholder?: String;
+    onChange?: () => void;
+    onFocus?: () => void;
+    value?: any;
+    placeholder?: string;
   }
 
   class ReactDropdown extends React.Component<ReactDropdownProps> {
